@@ -52,6 +52,9 @@ std::string Ram(int pid);
 std::string Uid(int pid);
 std::string User(int pid);
 long int UpTime(int pid);
+
+// custom method
+std::vector<std::string> Split(std::string &target_str, const char split_icon);
 };  // namespace LinuxParser
 
 #endif
