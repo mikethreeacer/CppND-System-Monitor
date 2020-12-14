@@ -5,15 +5,15 @@
 #include "linux_parser.h"
 
 
-// TODO: Return the aggregate CPU utilization
+// Done: Return the aggregate CPU utilization
 float Processor::Utilization() { 
-  float total_last = LinuxParser::Jiffies();
-  float active_last = LinuxParser::ActiveJiffies();
+  total_last = LinuxParser::Jiffies();
+  active_last = LinuxParser::ActiveJiffies();
 
   usleep(100000);
 
-  float total_now = LinuxParser::Jiffies();
-  float active_now = LinuxParser::ActiveJiffies();
+  total_now = LinuxParser::Jiffies();
+  active_now = LinuxParser::ActiveJiffies();
 
-  return (active_now - active_last)/(total_now - total_last);
+  return (active_now - active_last) / (total_now - total_last);
 }
